@@ -1,0 +1,10 @@
+{
+  "name": "vinci-airdrop",
+  "private": true,
+  "sideEffects": false,
+  "dependencies": {
+    "ethers": "^5.6.6",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.2.31"
+  }
+}

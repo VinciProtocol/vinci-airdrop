@@ -3,7 +3,8 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "node scripts/app.js"
+    "build": "node scripts/app.js",
+    "upgrade-winners-list": "node scripts/upgrade-winners-list.js"
   },
   "dependencies": {
     "ethers": "^5.6.6",

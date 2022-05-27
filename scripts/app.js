@@ -1,8 +1,7 @@
 const fs = require("fs");
-const path = require("path");
 const Generator = require("./generator");
+const { configPath } = require("../envs");
 
-const configPath = path.join(__dirname, "../config/eth.json");
 /**
  * Throws error and exists process
  * @param {string} erorr to log

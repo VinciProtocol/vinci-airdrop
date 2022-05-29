@@ -10,7 +10,7 @@
   Object.keys(configData.airdrop).forEach((winner) => winnerSet.add(winner.toLowerCase()))
   const winnerCount = winnerSet.size
 
-  const winnersList = require('../winners-list/eth-2022-05-27')
+  const winnersList = require('../winners-list/eth-2022-05-29')
 
   const winners = winnersList.split('\n')
 

@@ -4,13 +4,14 @@
   const configFile = await fs.readFileSync(configPath)
   const configData = JSON.parse(configFile.toString())
   const winnerSet = new Set()
+  const newWinnerSet = new Set()
   const errorWinnerSet = new Set()
   const repeatWinnerSet = new Set()
 
   Object.keys(configData.airdrop).forEach((winner) => winnerSet.add(winner.toLowerCase()))
   const winnerCount = winnerSet.size
 
-  const winnersList = require('../winners-list/eth-2022-05-29')
+  const winnersList = require('../winners-list/eth-2022-05-30')
 
   const winners = winnersList.split('\n')
 
@@ -20,6 +21,7 @@
     if (!winner.startsWith('0x') || winner.length !== 42) return errorWinnerSet.add(winner)
     if (winnerSet.has(winner)) return repeatWinnerSet.add(winner)
     winnerSet.add(winner)
+    newWinnerSet.add(winner)
   })
 
   console.log(`
@@ -40,6 +42,7 @@ repeat winner: ${repeatWinnerSet.size}
       {
         error: Array.from(errorWinnerSet.values()),
         repeat: Array.from(repeatWinnerSet.values()),
+        new: Array.from(newWinnerSet.values()),
       },
       null,
       2
